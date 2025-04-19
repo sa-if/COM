@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <!-- Include main navigation structure (can be refactored later) -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="/">E-Shop</a>
+        </div>
+        <div class="auth-section">
+            <span id="user-status" style="display: none;">Welcome, <span id="user-name"></span>! <button id="logout-button" class="btn btn-logout">Logout</button> | <a href="/profile" id="profile-link">My Profile</a> | <a href="/order-history" id="orders-link" class="nav-link">My Orders</a></span>
+            <span id="guest-actions">
+                 <button id="login-link" class="nav-btn">Login</button>
+                 <button id="register-link" class="nav-btn">Register</button>
+            </span>
+        </div>
+        <div class="cart-icon-container">
+          <img src="https://img.icons8.com/ios-filled/50/000000/shopping-cart.png" alt="Cart" id="cart-icon">
+        </div>
+      </div>
+    </nav>
+    
+    <main class="page-section">
+        <h2>My Profile</h2>
+        <div class="card profile-card">
+            <form id="profile-form">
+                <div id="profile-message" style="display: none;"></div> 
+                
+                <div class="profile-pic-section">
+                    <img id="profile-pic-preview" src="" alt="Profile Picture" width="100" height="100" style="display:none; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
+                    <label for="profilePicUrl">Profile Picture URL:</label>
+                    <input type="url" id="profilePicUrl" name="profilePicUrl" placeholder="Enter URL for profile image">
+                </div>
+
+                <label for="profile-name">Name:</label>
+                <input type="text" id="profile-name" name="name" required>
+                
+                <label for="profile-email">Email:</label>
+                <input type="email" id="profile-email" name="email" readonly disabled> <!-- Email not editable -->
+                
+                <label for="profile-phone">Phone:</label>
+                <input type="tel" id="profile-phone" name="phone">
+                
+                <label for="profile-address">Address:</label>
+                <textarea id="profile-address" name="address"></textarea>
+                
+                <button type="submit" class="btn primary">Update Profile</button>
+            </form>
+        </div>
+    </main>
+
+     <!-- Include shared script for auth status, cart display etc. -->
+    <script src="script.js"></script> 
+    <!-- Include profile-specific script -->
+    <script src="profile.js"></script> 
+</body>
+</html> 

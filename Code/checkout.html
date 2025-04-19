@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Modern E-commerce Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <button id="nav-shop" class="nav-btn">Back to Shop</button>
+      </div>
+    </nav>
+    <main class="page-section">
+      <div class="card checkout-card">
+        <h2>Place Your Order</h2>
+        <form id="orderForm">
+          <label for="customerName">
+            Customer Name:
+            <input type="text" id="customerName" name="customerName" required>
+          </label>
+          <label for="email">
+            Email:
+            <input type="email" id="email" name="email" required>
+          </label>
+          <label for="phone">
+            Phone:
+            <input type="tel" id="phone" name="phone" required>
+          </label>
+          <label for="address">
+            Address:
+            <textarea id="address" name="address" required></textarea>
+          </label>
+          <label for="paymentMethod">
+            Payment Option:
+            <select id="paymentMethod" name="paymentMethod" required>
+              <option value="COD">Cash on Delivery</option>
+              <option value="Bkash">Bkash</option>
+            </select>
+          </label>
+          <!-- Hide the bkash section by default -->
+          <div id="bkash-section" class="payment-section" style="display: none;">
+            <p>Bkash Send Money to: <strong>01660197960</strong></p>
+            <label for="paymentNumber">
+              Your Bkash Number:
+              <input type="text" id="paymentNumber" name="paymentNumber">
+            </label>
+            <label for="transactionId">
+              Transaction ID:
+              <input type="text" id="transactionId" name="transactionId">
+            </label>
+          </div>
+          <div id="cart-summary-for-form" class="summary-card"></div>
+          <label for="formTotalAmount">
+            Total Amount ($):
+            <input type="number" id="formTotalAmount" name="totalAmount" step="0.01" readonly required>
+          </label>
+          <label for="formItems">
+            Order Items (Details):
+            <textarea id="formItems" name="items" readonly required></textarea>
+          </label>
+          <button type="submit" class="btn primary">Submit Order</button>
+        </form>
+      </div>
+    </main>
+    <!-- <script src="checkout.js"></script> -->
+    <script src="script.js"></script>
+  </body>
+</html>

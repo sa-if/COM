@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Order History</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="order-history.css"> <!-- Add specific styles -->
+</head>
+<body>
+    <!-- Include main navigation structure (Same as other pages) -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="/">E-Shop</a>
+        </div>
+        <div class="auth-section">
+            <!-- User status will be updated by script.js -->
+            <span id="user-status" style="display: none;">Welcome, <span id="user-name"></span>! 
+                <button id="logout-button" class="btn btn-logout">Logout</button> | 
+                <a href="/profile" id="profile-link" class="nav-link">My Profile</a> | 
+                <a href="/order-history" id="orders-link" class="nav-link">My Orders</a> <!-- Added Orders Link -->
+            </span>
+            <span id="guest-actions">
+                 <button id="login-link" class="nav-btn">Login</button>
+                 <button id="register-link" class="nav-btn">Register</button>
+            </span>
+        </div>
+        <div class="cart-icon-container">
+          <img src="https://img.icons8.com/ios-filled/50/000000/shopping-cart.png" alt="Cart" id="cart-icon">
+        </div>
+      </div>
+    </nav>
+    
+    <main class="page-section">
+        <h2>My Order History</h2>
+        <div id="orders-container">
+            <p id="loading-message">Loading your orders...</p>
+            <!-- Orders will be dynamically inserted here -->
+        </div>
+        <div id="orders-error" class="error-message" style="display: none;"></div>
+    </main>
+
+    <!-- Login/Register Modals (Include if needed for header functionality) -->
+    <!-- You might factor modals into a separate template later -->
+     <div id="login-modal" class="modal" style="display: none;">
+       <div class="modal-content card">
+         <span class="close-button" data-modal-id="login-modal">&times;</span>
+         <h2>Login</h2>
+         <form id="login-form">
+           <div id="login-error" class="error-message" style="display: none;"></div>
+           <label for="login-email">Email:</label>
+           <input type="email" id="login-email" name="email" required>
+           <label for="login-password">Password:</label>
+           <input type="password" id="login-password" name="password" required>
+           <button type="submit" class="btn primary">Login</button>
+         </form>
+       </div>
+     </div>
+     <div id="register-modal" class="modal" style="display: none;">
+       <div class="modal-content card">
+         <span class="close-button" data-modal-id="register-modal">&times;</span>
+         <h2>Register</h2>
+         <form id="register-form">
+            <div id="register-error" class="error-message" style="display: none;"></div>
+            <div id="register-success" class="success-message" style="display: none;"></div>
+            <label for="register-name">Name:</label>
+            <input type="text" id="register-name" name="name" required>
+            <label for="register-email">Email:</label>
+            <input type="email" id="register-email" name="email" required>
+            <label for="register-password">Password (min 6 chars):</label>
+            <input type="password" id="register-password" name="password" required minlength="6">
+            <button type="submit" class="btn primary">Register</button>
+         </form>
+       </div>
+     </div>
+
+     <!-- Include shared script for auth status, cart display etc. -->
+    <script src="script.js"></script> 
+    <!-- Include order-history specific script -->
+    <script src="order-history.js"></script> 
+</body>
+</html> 

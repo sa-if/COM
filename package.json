@@ -1,0 +1,23 @@
+{
+  "name": "e-com-backend",
+  "version": "1.0.0",
+  "description": "Backend for the E-commerce website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node api/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed:import": "node utils/seeder -i",
+    "seed:destroy": "node utils/seeder -d"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "json2csv": "^6.0.0-alpha.2",
+    "mongoose": "^8.0.0"
+  }
+}
